@@ -9,9 +9,9 @@ const Home = () => {
 
     const checkoutHandler = async (amount) => {
 
-        const { data: { key } } = await axios.get("http://www.localhost:4000/api/getkey")
+        const { data: { key } } = await axios.get("https://custompayment2.onrender.com/api/getkey")
 
-        const { data: { order } } = await axios.post("http://localhost:4000/api/checkout", {
+        const { data: { order } } = await axios.post("https://custompayment2.onrender.com/api/checkout", {
             amount
         })
 
@@ -23,7 +23,7 @@ const Home = () => {
             description: "custom payment RazorPay",
             image: "https://avatars.githubusercontent.com/u/25058652?v=4",
             order_id: order.id,
-            callback_url: "http://localhost:4000/api/paymentverification",
+            callback_url: "https://custompayment2.onrender.coM/api/paymentverification",
             prefill: {
                 name: "pradhumn agrawal",
                 email: "pradhumn.agrawal@example.com",
